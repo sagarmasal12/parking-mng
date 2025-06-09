@@ -1,6 +1,10 @@
 
-import { Component } from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { IUserModel, User } from '../model/user.model';
+import { UserService } from '../service/user.service';
+import { Router } from '@angular/router';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 
 @Component({
   selector: 'app-login',
@@ -11,5 +15,22 @@ import { FormsModule } from '@angular/forms';
 })
 export class LoginComponent {
 
-  imgBackground = "assets/images/Flux_Dev_Create_a_stunning_highdefinition_background_image_for_0.jpg"
+  loginobj : User = new User();
+
+  userSrv = inject(UserService);
+
+  router = inject(Router)
+
+
+  onLogin(){
+    this.userSrv.loginUser(this.loginobj).subscribe((res:IUserModel)=>{
+      alert('User Found');
+      localStorage.setItem("parkUser",JSON.stringify(res))
+      this.router.navigateByUrl("/dashboard")
+    },error=>{
+      alert("Wrong Credential")
+    })
+  }
+
+
 }
