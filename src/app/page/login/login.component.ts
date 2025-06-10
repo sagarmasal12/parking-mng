@@ -15,15 +15,16 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
 })
 export class LoginComponent {
 
-  loginobj : User = new User();
+  loginobj : User = new User(); 
 
-  userSrv = inject(UserService);
+  userSrv = inject(UserService); //access service
 
-  router = inject(Router)
+  router = inject(Router) // when navigate from .ts or navigate another componet need to inject router
 
 
   onLogin(){
     this.userSrv.loginUser(this.loginobj).subscribe((res:IUserModel)=>{
+      // in IUserModel we store the data 
       alert('User Found');
       localStorage.setItem("parkUser",JSON.stringify(res))
       this.router.navigateByUrl("/dashboard")

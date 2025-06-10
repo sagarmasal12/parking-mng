@@ -22,6 +22,11 @@ export const routes: Routes = [
         component:LayoutComponent,
         children:[
             {
+                path:"layout",
+                component:LayoutComponent
+            },
+        
+            {
                 path:"dashboard",
                 component:DashboardComponent
             }
