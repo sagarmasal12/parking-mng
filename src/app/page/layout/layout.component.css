@@ -1,3 +1,80 @@
-.a{
-    color: floralwhite;
+/* Navbar Container */
+.container-fluid {
+  background-color: #0d6efd; /* Bright Blue */
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+/* Brand */
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand i {
+  font-size: 1.6rem;
+  margin-right: 0.5rem;
+  color: white;
+}
+
+/* Nav Links */
+.navbar-nav {
+  display: flex;
+  gap: 1.2rem;
+  margin-left: 2rem;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  opacity: 0.85;
+}
+
+/* Operator Info */
+.operator-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: white;
+}
+
+/* Badge */
+#operatorRoleBadge {
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.4rem;
+  background-color: white;
+  color: #0d6efd;
+}
+
+/* Logout Button */
+.btn-warning {
+  background-color: #ffc107;
+  border: none;
+  padding: 0.4rem 1rem;
+  font-weight: 600;
+  color: black;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  color: white;
 }
