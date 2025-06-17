@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'app-layout',
@@ -9,4 +10,10 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class LayoutComponent {
 
+  userSrv= inject(UserService);
+  router = inject(Router)
+  onlogoff(){
+    localStorage.removeItem('parkUser');
+    this.router.navigateByUrl("/login")
+  }
 }

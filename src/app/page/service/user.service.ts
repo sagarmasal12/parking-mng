@@ -8,12 +8,13 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
+  loggedUserData! : IUserModel;
+
   constructor(private http:HttpClient) { }
 
-
-
     loginUser(obj:User):Observable<IUserModel>{
-      return this.http.post<IUserModel>("https://api.freeprojectapi.com/api/SmartParking/login",obj)
     
+      return this.http.post<IUserModel>("https://api.freeprojectapi.com/api/SmartParking/login",obj)
+
   }
 }

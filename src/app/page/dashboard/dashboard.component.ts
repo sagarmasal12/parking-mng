@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { MasterService } from '../service/master.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,7 +7,14 @@ import { Component } from '@angular/core';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit{
 
-  natureImg = "public/assets/images/download.jpeg"
+  masterSrv = inject(MasterService)
+
+  ngOnInit(): void {
+    debugger
+    
+  }
+
+  
 }

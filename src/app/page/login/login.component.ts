@@ -23,10 +23,12 @@ export class LoginComponent {
 
 
   onLogin(){
-    this.userSrv.loginUser(this.loginobj).subscribe((res:IUserModel)=>{
+    this.userSrv.loginUser(this.loginobj).subscribe((res)=>{
+      debugger;
       // in IUserModel we store the data 
       alert('User Found');
-      localStorage.setItem("parkUser",JSON.stringify(res))
+      localStorage.setItem("parkUser",JSON.stringify(res));
+      this.userSrv.loggedUserData= res;
       this.router.navigateByUrl("/dashboard")
     },error=>{
       alert("Wrong Credential")
