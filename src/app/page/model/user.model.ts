@@ -19,3 +19,9 @@ export interface IUserModel {
   mobileNo: string
   extraId: any
 }
+
+export interface ResponseModel {
+  message: string
+  result: boolean
+  data: any[]
+}

@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MasterService } from '../service/master.service';
+import { ResponseModel } from '../model/user.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,8 +13,13 @@ export class DashboardComponent implements OnInit{
   masterSrv = inject(MasterService)
 
   ngOnInit(): void {
-    debugger
-    
+      
+  }
+
+  getSites(){
+    this.masterSrv.getSiteByClientId().subscribe((res:ResponseModel)=>{
+      
+    })
   }
 
   
