@@ -24,7 +24,7 @@ export class LoginComponent {
 
   onLogin(){
     this.userSrv.loginUser(this.loginobj).subscribe((res)=>{
-      debugger;
+      
       // in IUserModel we store the data 
       alert('User Found');
       localStorage.setItem("parkUser",JSON.stringify(res));

@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MasterService } from '../service/master.service';
-import { ResponseModel } from '../model/user.model';
+import { ISite, ResponseModel } from '../model/user.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,15 +10,21 @@ import { ResponseModel } from '../model/user.model';
 })
 export class DashboardComponent implements OnInit{
 
-  masterSrv = inject(MasterService)
+  masterSrv = inject(MasterService);
+  
+  siteList:ISite[]=[]
+
+  siteName = ["asdf",'pune','baner','hijewadi']
 
   ngOnInit(): void {
-      
+    debugger
+      this.getSites();
   }
 
   getSites(){
+    debugger
     this.masterSrv.getSiteByClientId().subscribe((res:ResponseModel)=>{
-      
+      this.siteList=res.data
     })
   }
 

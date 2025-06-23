@@ -10,7 +10,7 @@ import { UserService } from './user.service';
 export class MasterService {
 
 
-    userSrv= inject(UserService);
+  userSrv= inject(UserService);
 
   constructor(private http:HttpClient) { }
 
@@ -19,7 +19,9 @@ export class MasterService {
 
   getSiteByClientId():Observable<ResponseModel>{
     const clientId = this.userSrv.loggedUserData.extraId
-    return this.http.get<ResponseModel>("https://api.freeprojectapi.com/api/SmartParking/GetSitesByClientId?id="+clientId)
+    return this.http.get<ResponseModel>("https://api.freeprojectapi.com/api/SmartParking/GetSitesByClientId?id="+clientId);
+
   }
+
   
 }
