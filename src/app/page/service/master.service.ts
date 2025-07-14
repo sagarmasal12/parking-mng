@@ -9,13 +9,9 @@ import { UserService } from './user.service';
 })
 export class MasterService {
 
-
   userSrv= inject(UserService);
 
   constructor(private http:HttpClient) { }
-
-
-
 
   getSiteByClientId():Observable<ResponseModel>{
     const clientId = this.userSrv.loggedUserData.extraId
