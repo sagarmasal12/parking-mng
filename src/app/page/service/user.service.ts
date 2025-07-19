@@ -16,5 +16,9 @@ export class UserService {
     
       return this.http.post<IUserModel>("https://api.freeprojectapi.com/api/SmartParking/login",obj)
 
-  }
+    }
+
+    getSiteBuild(obj:User){
+      this.http.post("https://api.freeprojectapi.com/api/SmartParking/GetBuildingBySiteId",obj)
+    }
 }

@@ -12,8 +12,8 @@
                             <select class="form-select ng-pristine ng-valid ng-touched" fdprocessedid="eqnkal">
 
                                 <option value="0">Select Site</option>
-                                @for (item of siteName; track $index) {
-                                <option [value]="item">{{item}}</option>
+                                @for (item of siteList; track $index) {
+                                <option [value]="item.siteId">{{item.siteName}}</option>
                                 }
                             </select><select class="form-select ng-untouched ng-pristine ng-valid"
                                 fdprocessedid="ip3dn4">

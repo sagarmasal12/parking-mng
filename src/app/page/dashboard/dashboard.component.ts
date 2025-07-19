@@ -12,9 +12,9 @@ export class DashboardComponent implements OnInit{
 
   masterSrv = inject(MasterService);
   
-  siteList:ISite[]=[]
+  siteList:ISite[]=[];
 
-  siteName = ["asdf",'pune','baner','hijewadi']
+  // siteName = ["asdf",'pune','baner','hijewadi']
 
   ngOnInit(): void {
     debugger
@@ -24,9 +24,10 @@ export class DashboardComponent implements OnInit{
   getSites(){
     debugger
     this.masterSrv.getSiteByClientId().subscribe((res:ResponseModel)=>{
-      this.siteList=res.data
+      this.siteList=res.data;
     })
   }
+ 
 
   
 }
